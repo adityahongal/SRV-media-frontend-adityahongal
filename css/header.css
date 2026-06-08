@@ -1,0 +1,166 @@
+/* HERO HEADER — Header-01
+White bg, inside-hero section, scrolls away with the hero */
+
+.hero-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: #ffffff;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-header__logo-container {
+  position: relative;
+  width: 160px;
+  height: 40px;
+}
+
+.hero-header__logo {
+  width: 160px;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+}
+
+@media (min-width: 768px) {
+  .hero-header {
+    padding: 20px 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-header {
+    padding: 20px 80px;
+  }
+}
+
+/* STICKY HEADER — Header-02
+Purple gradient, fixed to top, hidden until scroll */
+
+.sticky-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: linear-gradient(89.72deg, #000e38 0.22%, #3f186a 52.52%);
+
+  transform: translateY(0);
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sticky-header[data-state="hidden"] {
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+.sticky-header__logo-container {
+  height: 100px; /* height of logo container*/
+  display: flex;
+  align-items: center;
+}
+
+.sticky-header__logo {
+  height: 100px; /* ensure image fits the container exactly */
+  width: auto;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .sticky-header {
+    padding: 20px 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sticky-header {
+    padding: 20px 80px;
+  }
+}
+
+/* REGISTER NOW BUTTON — shared by both headers */
+
+.hero-header__register-button,
+.sticky-header__register-button {
+  height: 36px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #081b57;
+  border-radius: 4px;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.hero-header__register-button::before,
+.sticky-header__register-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #5c2592;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.55s ease;
+  z-index: 0;
+}
+
+.hero-header__register-button:hover::before,
+.sticky-header__register-button:hover::before {
+  transform: scaleX(1);
+}
+
+.hero-header__button-icon,
+.sticky-header__button-icon {
+  width: 36px;
+  height: 100%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(270deg, #000e38 0%, #3f186a 100%);
+  position: relative;
+  z-index: 2;
+}
+
+.hero-header__icon-arrow,
+.sticky-header__icon-arrow {
+  width: 12px;
+  height: 12px;
+  color: #ffffff;
+  transition: transform 0.45s ease;
+  transform-origin: center;
+}
+
+.hero-header__register-button:hover .hero-header__icon-arrow,
+.sticky-header__register-button:hover .sticky-header__icon-arrow {
+  transform: rotate(45deg);
+}
+
+.hero-header__button-text,
+.sticky-header__button-text {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 12px;
+  font-family: "Mulish", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #081b57;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+.hero-header__register-button:hover .hero-header__button-text,
+.sticky-header__register-button:hover .sticky-header__button-text {
+  color: #ffffff;
+}

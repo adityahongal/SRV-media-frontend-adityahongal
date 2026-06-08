@@ -73,7 +73,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Mulish", system-ui, sans-serif; /* stand-in for Museo Sans */
+  font-family: "Mulish", system-ui, sans-serif; /* stand-in for Museo Sans font */
   font-weight: 700;
   line-height: 1.2;
   color: #3f186a;
@@ -131,3 +131,22 @@ a:hover {
     scroll-behavior: auto !important;
   }
 }
+
+/* SKIP LINK — global accessibility helper */
+  
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #3f186a;
+    color: #ffffff;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 0 0 4px 0;
+    z-index: 200;       /* above sticky header (z:100) so it's visible when focused */
+    font-weight: 700;
+  }
+  
+  .skip-link:focus {
+    top: 0;
+  } 
