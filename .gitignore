@@ -12,3 +12,6 @@ assets/other-attractions/originals/
 assets/img/hero/originals/
 assets/exhibition-originals/
 assets/originals/
+
+# Local Netlify folder
+.netlify
