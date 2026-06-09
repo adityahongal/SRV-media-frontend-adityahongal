@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/hero.css" />
     <link rel="stylesheet" href="css/stats.css" />
     <link rel="stylesheet" href="css/schools-marquee.css" />
+    <link rel="stylesheet" href="css/exhibition-banner.css" />
   </head>
   <body>
     <!-- Skip link: FIRST focusable element on the page -->
@@ -390,11 +391,26 @@
         </div>
       </section>
 
-      <section
-        class="exhibition-banner"
-        aria-label="About Premier Schools Exhibition"
-      >
-        <!-- Dark banner with PSE logo and dates -->
+      <section class="exhibition-banner" aria-label="Premier Schools Exhibition event video">
+        <div class="exhibition-banner__media">
+          <video
+            class="exhibition-banner__video"
+            src="assets/big-video-1.mp4"
+            preload="metadata"
+            muted
+            playsinline
+            aria-label="Premier Schools Exhibition event highlights"
+          ></video>
+
+          <button class="exhibition-banner__play" type="button" aria-label="Play event video">
+            <span class="exhibition-banner__play-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </span>
+            <span class="exhibition-banner__play-text">Play Event Video</span>
+          </button>
+        </div>
       </section>
 
       <section
@@ -442,5 +458,6 @@
 
     <script src="js/main.js" defer></script>
     <script src="js/header.js" defer></script>
+    <script src="js/exhibition-banner.js" defer></script>
   </body>
 </html>

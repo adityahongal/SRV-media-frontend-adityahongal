@@ -1,0 +1,107 @@
+/* =========================================================
+   EXHIBITION BANNER — video with small play CTA bottom-left
+   ========================================================= */
+
+.exhibition-banner {
+  background: #000000;
+  padding: 0;
+}
+
+.exhibition-banner__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  overflow: hidden;
+}
+
+.exhibition-banner__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* Play button — bottom-left, transparent background */
+.exhibition-banner__play {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+
+  color: #ffffff;
+  font-family: "Mulish", sans-serif;
+  font-weight: 600;
+  font-size: clamp(13px, 1.1vw, 16px);
+}
+
+.exhibition-banner__play-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;        /* solid white fill */
+  border: none;
+  color: #000000;             /* black triangle */
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.exhibition-banner__play-icon svg {
+  width: 18px;
+  height: 18px;
+  margin-left: 2px;           /* visually centers the triangle */
+}
+
+.exhibition-banner__play:hover .exhibition-banner__play-icon,
+.exhibition-banner__play:focus-visible .exhibition-banner__play-icon {
+  transform: scale(1.08);
+}
+
+
+/* Hide the play button while video is playing */
+.exhibition-banner[data-playing="true"] .exhibition-banner__play {
+  display: none;
+}
+
+
+/* Mobile / tablet — slightly smaller play button, taller aspect ratio */
+@media (max-width: 768px) {
+  .exhibition-banner__media {
+    aspect-ratio: 4 / 3;
+  }
+
+  .exhibition-banner__play {
+    bottom: 14px;
+    left: 14px;
+    gap: 8px;
+  }
+
+  .exhibition-banner__play-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .exhibition-banner__play-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .exhibition-banner__play-icon {
+    transition: none !important;
+  }
+}
