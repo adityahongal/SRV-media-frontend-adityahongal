@@ -1,0 +1,275 @@
+/* =========================================================
+   EXHIBITION SECTION — slider with prev/next, mobile grid
+   ========================================================= */
+
+.exhibition {
+  position: relative;
+  background: linear-gradient(135deg, #0a0427 0%, #2d0d52 50%, #3f186a 100%);
+  padding: 64px 0 100px;
+  overflow: hidden;
+}
+
+.exhibition__title {
+  text-align: center;
+  font-family: "Mulish", sans-serif;
+  font-weight: 700;
+  font-size: clamp(24px, 2.6vw, 36px);
+  color: #ffffff;
+  margin: 0 0 40px;
+  padding: 0 24px;
+}
+
+
+/* Slider viewport */
+.exhibition__viewport {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.exhibition__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.exhibition__list::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* Card */
+.exhibition__card {
+  flex: 0 0 280px;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(59.05deg, #DDBFFF 0.39%, #EDDDFF 93.5%);
+  border-radius: 20px;
+  padding: 28px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  box-sizing: border-box;
+}
+
+.exhibition__icon {
+  width: 48px;
+  height: 48px;
+  display: block;
+}
+
+/* Gradient text for both title and description */
+.exhibition__card-title,
+.exhibition__card-desc {
+  background: linear-gradient(360deg, #000E38 0%, #3F186A 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.exhibition__card-title {
+  font-family: "Mulish", sans-serif;
+  font-weight: 700;
+  font-size: clamp(16px, 1.4vw, 20px);
+  margin: 0;
+  line-height: 1.25;
+}
+
+.exhibition__card-desc {
+  font-family: "Mulish", sans-serif;
+  font-weight: 400;
+  font-size: clamp(13px, 1.05vw, 15px);
+  line-height: 1.5;
+  margin: 0;
+}
+
+
+/* Nav buttons */
+.exhibition__controls {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.exhibition__nav {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.exhibition__nav:hover {
+  background: #ffffff;
+  color: #3f186a;
+}
+
+.exhibition__nav:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.exhibition__nav:disabled:hover {
+  background: transparent;
+  color: #ffffff;
+}
+
+.exhibition__nav svg {
+  width: 20px;
+  height: 20px;
+}
+
+
+/* White curved bottom */
+.exhibition::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: -5%;
+  right: -5%;
+  height: 80px;
+  background: #ffffff;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  z-index: 1;
+}
+
+
+/* =========================================================
+   TABLET (768–1024px)
+   ========================================================= */
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  .exhibition__card {
+    flex: 0 0 240px;
+    padding: 24px;
+    gap: 12px;
+  }
+
+  .exhibition__icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE 2×2 GRID (≤767px)
+   ========================================================= */
+
+@media (max-width: 767px) {
+  .exhibition {
+    padding: 48px 0 80px;
+  }
+
+  .exhibition__title {
+    margin-bottom: 28px;
+    padding: 0 20px;
+  }
+
+  .exhibition__viewport {
+    padding: 0 20px;
+    overflow: visible;
+  }
+
+  .exhibition__list {
+    display: grid;
+    grid-template-columns: 200px 200px;
+    justify-content: center;
+    gap: 12px;
+    scroll-snap-type: none;
+    overflow: visible;
+  }
+
+  .exhibition__card {
+    flex: none;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    padding: 14px;
+    gap: 8px;
+    scroll-snap-align: none;
+  }
+
+  .exhibition__icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .exhibition__card-title {
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  .exhibition__card-desc {
+    font-size: 10.5px;
+    line-height: 1.35;
+  }
+
+  .exhibition__controls {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES (≤430px) — single column stack
+   ========================================================= */
+
+@media (max-width: 430px) {
+  .exhibition__list {
+    grid-template-columns: minmax(0, 280px);
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .exhibition__card {
+    aspect-ratio: 5 / 3;
+    padding: 16px;
+  }
+
+  .exhibition__icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .exhibition__card-title {
+    font-size: 14px;
+  }
+
+  .exhibition__card-desc {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .exhibition__list {
+    scroll-behavior: auto;
+  }
+  .exhibition__nav,
+  .exhibition__card {
+    transition: none !important;
+  }
+}

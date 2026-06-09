@@ -1,9 +1,8 @@
 /* =========================================================
-   OTHER ATTRACTIONS — pinwheel of diamond photos + tab content
+   OTHER ATTRACTIONS — pinwheel + tabs + content
    ========================================================= */
 
 .attractions {
-  /* Soft pastel multi-color gradient matching the reference image */
   background:
     radial-gradient(circle at 15% 25%, rgba(255, 220, 225, 0.55) 0%, transparent 55%),
     radial-gradient(circle at 88% 12%, rgba(208, 224, 236, 0.55) 0%, transparent 55%),
@@ -13,31 +12,30 @@
 }
 
 .attractions__container {
-  max-width: 1320px;                      /* wider for more breathing room */
+  max-width: 1320px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;    /* equal sides, star sizes to its content */
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas:
     "pinwheel star title"
     "pinwheel star tabs"
     "pinwheel star panels"
     "pinwheel star button";
   align-items: center;
-  column-gap: 64px;                       /* equal, generous gutters — was 32 */
+  column-gap: 64px;
   row-gap: 20px;
 }
 
 
 /* =========================================================
-   PINWHEEL — 4 diamonds in a cross pattern (top / left+right / bottom)
-   Each diamond is a rotated square; container does NOT rotate.
+   PINWHEEL — 4 diamonds in cross pattern (top / left+right / bottom)
    ========================================================= */
 
 .attractions__pinwheel-wrapper {
   grid-area: pinwheel;
   display: flex;
   align-items: center;
-  justify-self: end;                      /* right-align pinwheel → equal gap to star */
+  justify-self: end;
   align-self: center;
   grid-row: span 4;
 }
@@ -45,7 +43,7 @@
 .attractions__pinwheel {
   position: relative;
   width: 100%;
-  max-width: 560px;                        /* bigger pinwheel */
+  max-width: 560px;
   aspect-ratio: 1;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -63,35 +61,11 @@
   transform: rotate(45deg);
 }
 
-.attractions__logo-wrapper {
-  justify-self: center;
-}
-
-.attractions__content {
-  justify-self: end;
-}
-
-.attractions__diamond--top {
-  transform: translateY(20px) rotate(45deg);
-}
-
-.attractions__diamond--bottom {
-  transform: translateY(-20px) rotate(45deg);
-}
-
-.attractions__diamond--left {
-  transform: translateX(20px) rotate(45deg);
-}
-
-.attractions__diamond--right {
-  transform: translateX(-20px) rotate(45deg);
-}
-
-
-.attractions__diamond--top    { grid-area: top; }
-.attractions__diamond--left   { grid-area: left; }
-.attractions__diamond--right  { grid-area: right; }
-.attractions__diamond--bottom { grid-area: bottom; }
+/* Subtle inset offsets to bring diamonds closer to centre */
+.attractions__diamond--top    { transform: translateY(20px)  rotate(45deg); grid-area: top; }
+.attractions__diamond--bottom { transform: translateY(-20px) rotate(45deg); grid-area: bottom; }
+.attractions__diamond--left   { transform: translateX(20px)  rotate(45deg); grid-area: left; }
+.attractions__diamond--right  { transform: translateX(-20px) rotate(45deg); grid-area: right; }
 
 .attractions__diamond img {
   width: 100%;
@@ -102,36 +76,37 @@
 
 
 /* =========================================================
-   STAR LOGO — sits independently in the centre column
+   STAR LOGO — middle column
    ========================================================= */
 
 .attractions__star-wrapper {
   grid-area: star;
   display: flex;
   align-items: center;
-  justify-content: center; 
-  justify-self: center;    
+  justify-content: center;
+  justify-self: center;
   align-self: center;
   grid-row: span 4;
 }
 
 .attractions__star {
   width: 100%;
-  max-width: 260px;                        /* smaller star */
+  max-width: 260px;
   height: auto;
   display: block;
   pointer-events: none;
 }
 
 
-/* ----------------- CONTENT GRID AREAS ----------------- */
+/* =========================================================
+   CONTENT — title, tabs, panels, button
+   ========================================================= */
 
 .attractions__title    { grid-area: title; margin: 0; min-width: 0; }
 .attractions__tabs     { grid-area: tabs; margin: 0; min-width: 0; }
 .attractions__panels   { grid-area: panels; min-width: 0; }
 .attractions__container > .register-btn { grid-area: button; justify-self: start; min-width: 0; }
 
-/* Prevent the whole pinwheel/star columns from forcing overflow either */
 .attractions__pinwheel-wrapper,
 .attractions__star-wrapper { min-width: 0; }
 
@@ -152,7 +127,7 @@
 /* Tabs */
 .attractions__tabs {
   display: flex;
-  gap: clamp(6px, 0.7vw, 12px);            /* tighter gap on narrow desktops */
+  gap: clamp(6px, 0.7vw, 12px);
   margin-bottom: 24px;
   flex-wrap: nowrap;
   width: 100%;
@@ -161,10 +136,10 @@
 
 .attractions__tab {
   flex: 1 1 0;
-  min-width: 0;                            /* allow tabs to shrink below content size */
+  min-width: 0;
   padding: clamp(8px, 1vw, 14px) clamp(8px, 1vw, 16px);
   font-family: "Mulish", sans-serif;
-  font-size: clamp(10px, 0.85vw, 13px);    /* scales down on narrow widths */
+  font-size: clamp(10px, 0.85vw, 13px);
   font-weight: 700;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -175,7 +150,7 @@
   cursor: pointer;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;                 /* graceful fallback if too narrow */
+  text-overflow: ellipsis;
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
@@ -189,7 +164,7 @@
 }
 
 
-/* Panels — only the active one is visible */
+/* Panels */
 .attractions__panel[hidden] {
   display: none;
 }
@@ -213,7 +188,7 @@
 }
 
 
-/* CTA (reusing register-btn pattern, scoped here for flexibility) */
+/* CTA — register-btn pattern scoped here */
 .attractions .register-btn {
   height: 56px;
   position: relative;
@@ -274,7 +249,6 @@
   font-family: "Mulish", sans-serif;
   font-size: 14px;
   font-weight: 700;
-
   color: #101145;
   text-transform: uppercase;
   position: relative;
@@ -289,7 +263,7 @@
 
 /* =========================================================
    MOBILE / TABLET (≤900px)
-   Stack: Title → [Pinwheel area with Star at hidden top-diamond slot] → Tabs → Panels → Button
+   Stack: Title → Pinwheel (with star in top diamond slot) → Tabs → Panels → Button
    ========================================================= */
 
 @media (max-width: 900px) {
@@ -297,7 +271,6 @@
     padding: 48px 20px;
   }
 
-  /* No separate "star" row — star overlays the empty top-diamond slot inside pinwheel area */
   .attractions__container {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -312,17 +285,14 @@
     justify-items: center;
   }
 
-  /* Title — centered, larger heading */
   .attractions__title {
     text-align: center;
     font-size: clamp(28px, 7vw, 40px);
     margin-bottom: 8px;
     justify-self: center;
     padding-bottom: 24px;
-
   }
 
-  /* Pinwheel wrapper occupies the pinwheel cell */
   .attractions__pinwheel-wrapper {
     grid-area: pinwheel;
     grid-row: span 1;
@@ -331,15 +301,12 @@
     display: flex;
     justify-content: center;
     padding-bottom: 24px;
-
   }
 
-  /* Hide standalone star — replaced by background star inside pinwheel below */
   .attractions__star-wrapper {
     display: none;
   }
 
-  /* Pinwheel grid: top diamond hidden — star replaces it via ::before pseudo-element */
   .attractions__pinwheel {
     position: relative;
     width: min(80vw, 380px);
@@ -353,7 +320,7 @@
       ".     bottom .    ";
   }
 
-  /* Star image as a pseudo-element at the hidden top-diamond slot */
+  /* Star pseudo-element fills the hidden top-diamond slot */
   .attractions__pinwheel::before {
     content: "";
     position: absolute;
@@ -378,7 +345,6 @@
     transform: rotate(-45deg) scale(1.42);
   }
 
-  /* Tabs — equal width, single row, container width */
   .attractions__tabs {
     justify-self: stretch;
     width: 100%;
@@ -394,7 +360,6 @@
     padding: 14px 8px;
   }
 
-  /* Panel description centered */
   .attractions__panels {
     text-align: center;
     max-width: 460px;
@@ -405,7 +370,6 @@
     margin: 0 auto;
   }
 
-  /* Button — full mobile width, centred */
   .attractions__container > .register-btn {
     justify-self: stretch;
     width: 100%;
