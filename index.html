@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/stats.css" />
     <link rel="stylesheet" href="css/schools-marquee.css" />
     <link rel="stylesheet" href="css/exhibition-banner.css" />
+    <link rel="stylesheet" href="css/choose-school.css" />
   </head>
   <body>
     <!-- Skip link: FIRST focusable element on the page -->
@@ -418,8 +419,48 @@
         class="choose-school"
         aria-labelledby="choose-school-title"
       >
-        <h2 id="choose-school-title">Choose the School That Fits You Best</h2>
-        <!-- 4 cards on desktop, slider on mobile -->
+        <h2 id="choose-school-title" class="choose-school__title">Choose the School That Fits You Best</h2>
+
+        <div class="choose-school__viewport">
+          <ul class="choose-school__list">
+            <li class="choose-school__card">
+              <img src="assets/ChooseSchoolsSection/ChooseSchoolsSection-1.jpg" alt="" loading="lazy" />
+              <div class="choose-school__card-content">
+                <h3 class="choose-school__card-title">Pre-Schools &amp; Early Learning Centres</h3>
+                <p class="choose-school__card-desc">Nurturing foundational skills for toddlers and pre-primary children.</p>
+              </div>
+            </li>
+            <li class="choose-school__card">
+              <img src="assets/ChooseSchoolsSection/ChooseSchoolsSection-2.jpg" alt="" loading="lazy" />
+              <div class="choose-school__card-content">
+                <h3 class="choose-school__card-title">K&ndash;12 CBSE Day Schools</h3>
+                <p class="choose-school__card-desc">Reputed schools offering complete schooling from Kindergarten to Grade 12.</p>
+              </div>
+            </li>
+            <li class="choose-school__card">
+              <img src="assets/ChooseSchoolsSection/ChooseSchoolsSection-3.jpg" alt="" loading="lazy" />
+              <div class="choose-school__card-content">
+                <h3 class="choose-school__card-title">Heritage to New-Age Schools</h3>
+                <p class="choose-school__card-desc">Time-tested schools to innovative pedagogy, tech enabled, future-ready schools.</p>
+              </div>
+            </li>
+            <li class="choose-school__card">
+              <img src="assets/ChooseSchoolsSection/ChooseSchoolsSection-4.jpg" alt="" loading="lazy" />
+              <div class="choose-school__card-content">
+                <h3 class="choose-school__card-title">International Curriculum Schools</h3>
+                <p class="choose-school__card-desc">Offering IB, Cambridge, Finnish and other global curricula with a global learning environment.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Pagination dots — visible on mobile only -->
+        <div class="choose-school__dots" role="tablist" aria-label="School slides">
+          <button class="choose-school__dot" type="button" aria-label="Show school 1" aria-current="true"></button>
+          <button class="choose-school__dot" type="button" aria-label="Show school 2"></button>
+          <button class="choose-school__dot" type="button" aria-label="Show school 3"></button>
+          <button class="choose-school__dot" type="button" aria-label="Show school 4"></button>
+        </div>
       </section>
 
       <section class="appointments" aria-labelledby="appointments-title">
@@ -459,5 +500,6 @@
     <script src="js/main.js" defer></script>
     <script src="js/header.js" defer></script>
     <script src="js/exhibition-banner.js" defer></script>
+    <script src="js/choose-school.js" defer></script>
   </body>
 </html>

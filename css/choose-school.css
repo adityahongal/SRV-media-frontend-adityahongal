@@ -1,0 +1,181 @@
+/* =========================================================
+   CHOOSE THE SCHOOL — 4 cards on desktop, mobile carousel
+   ========================================================= */
+
+.choose-school {
+  background: #ffffff;
+  padding: 56px 24px;
+}
+
+.choose-school__title {
+  text-align: center;
+  font-family: "Mulish", sans-serif;
+  font-weight: 700;
+  font-size: clamp(24px, 2.6vw, 36px);
+  color: #3f186a;
+  margin: 0 0 32px;
+}
+
+.choose-school__viewport {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.choose-school__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+.choose-school__card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 6 / 7;
+  background: #2d0d52;             /* fallback while image loads */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.choose-school__card:hover,
+.choose-school__card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(63, 24, 106, 0.18);
+}
+
+.choose-school__card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.choose-school__card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32px 20px 20px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.55) 45%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
+  color: #ffffff;
+}
+
+.choose-school__card-title {
+  font-family: "Mulish", sans-serif;
+  font-size: clamp(14px, 1.15vw, 17px);
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 6px;
+  color: #ffffff;
+}
+
+.choose-school__card-desc {
+  font-family: "Mulish", sans-serif;
+  font-size: clamp(12px, 0.9vw, 14px);
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* Pagination dots — hidden on desktop */
+.choose-school__dots {
+  display: none;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.choose-school__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #d9d9d9;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.choose-school__dot[aria-current="true"] {
+  background: #3f186a;
+  transform: scale(1.3);
+}
+
+
+/* =========================================================
+   MOBILE / TABLET - swipe carousel with dots
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .choose-school {
+    padding: 40px 0 32px;
+  }
+
+  .choose-school__title {
+    padding: 0 24px;
+    margin-bottom: 24px;
+  }
+
+  .choose-school__viewport {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 24px;    
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;          /* hide scrollbar (Firefox) */
+  }
+
+  .choose-school__viewport::-webkit-scrollbar {
+    display: none;                  /* hide scrollbar (Safari/Chrome) */
+  }
+
+  .choose-school__list {
+    display: flex;
+    grid-template-columns: none;
+    gap: 20px;                      /* slightly more space between cards */
+    padding: 0 24px;
+  }
+
+  .choose-school__list::after {
+    content: "";
+    flex: 0 0 8px;                 
+  }
+
+  .choose-school__card {
+    flex: 0 0 78%;                  
+    max-width: 320px;               
+    scroll-snap-align: center;
+    aspect-ratio: 6 / 7;
+  }
+
+  .choose-school__dots {
+    display: flex;
+  }
+}
+
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .choose-school__card {
+    transition: none !important;
+  }
+  .choose-school__viewport {
+    scroll-behavior: auto !important;
+  }
+}

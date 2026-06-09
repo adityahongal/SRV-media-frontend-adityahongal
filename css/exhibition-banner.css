@@ -1,6 +1,4 @@
-/* =========================================================
-   EXHIBITION BANNER — video with small play CTA bottom-left
-   ========================================================= */
+/* EXHIBITION BANNER — video with small play CTA bottom-left */
 
 .exhibition-banner {
   background: #000000;
@@ -22,7 +20,7 @@
 }
 
 
-/* Play button — bottom-left, transparent background */
+/* Play button */
 .exhibition-banner__play {
   position: absolute;
   bottom: 24px;
@@ -60,7 +58,7 @@
 .exhibition-banner__play-icon svg {
   width: 18px;
   height: 18px;
-  margin-left: 2px;           /* visually centers the triangle */
+  margin-left: 2px;           
 }
 
 .exhibition-banner__play:hover .exhibition-banner__play-icon,
@@ -75,7 +73,7 @@
 }
 
 
-/* Mobile / tablet — slightly smaller play button, taller aspect ratio */
+/* Mobile / tablet */
 @media (max-width: 768px) {
   .exhibition-banner__media {
     aspect-ratio: 4 / 3;
