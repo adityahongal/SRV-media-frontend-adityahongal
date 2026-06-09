@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/hero.css" />
     <link rel="stylesheet" href="css/stats.css" />
+    <link rel="stylesheet" href="css/schools-marquee.css" />
   </head>
   <body>
     <!-- Skip link: FIRST focusable element on the page -->
@@ -343,8 +344,50 @@
         </ul>
       </section>
 
-      <section class="schools-marquee" aria-label="Participating schools">
-        <!-- Two-row continuous logo marquee -->
+      <section class="schools-marquee" aria-labelledby="schools-title">
+        <h2 id="schools-title" class="schools-marquee__title">Participating Schools</h2>
+
+        <!-- Row 1: scrolls left → right (track translates left) -->
+        <div class="schools-marquee__row schools-marquee__row--left">
+          <div class="schools-marquee__track">
+            <div class="schools-marquee__item"><img src="assets/ParticipatingSchools/hopetown.png" alt="Hopetown School" loading="lazy" /></div>
+            <div class="schools-marquee__item"><img src="assets/ParticipatingSchools/participating-schools-1.jpg" alt="Partner school" loading="lazy" /></div>
+            <div class="schools-marquee__item"><img src="assets/ParticipatingSchools/participating-schools-2.png" alt="Partner school" loading="lazy" /></div>
+            <div class="schools-marquee__item"><img src="assets/ParticipatingSchools/participating-schools-3.jpg" alt="Partner school" loading="lazy" /></div>
+            <div class="schools-marquee__item"><img src="assets/ParticipatingSchools/participating-schools-4.jpg" alt="Partner school" loading="lazy" /></div>
+            <div class="schools-marquee__item"><img src="assets/ParticipatingSchools/participating-schools5.png" alt="Partner school" loading="lazy" /></div>
+            <div class="schools-marquee__item"><img src="assets/ParticipatingSchools/participating-schools-6.png" alt="Partner school" loading="lazy" /></div>
+            <!-- duplicate set for seamless loop -->
+            <div class="schools-marquee__item" aria-hidden="true"><img src="assets/ParticipatingSchools/hopetown.png" alt="" loading="lazy" /></div>
+            <div class="schools-marquee__item" aria-hidden="true"><img src="assets/ParticipatingSchools/participating-schools-1.jpg" alt="" loading="lazy" /></div>
+            <div class="schools-marquee__item" aria-hidden="true"><img src="assets/ParticipatingSchools/participating-schools-2.png" alt="" loading="lazy" /></div>
+            <div class="schools-marquee__item" aria-hidden="true"><img src="assets/ParticipatingSchools/participating-schools-3.jpg" alt="" loading="lazy" /></div>
+            <div class="schools-marquee__item" aria-hidden="true"><img src="assets/ParticipatingSchools/participating-schools-4.jpg" alt="" loading="lazy" /></div>
+            <div class="schools-marquee__item" aria-hidden="true"><img src="assets/ParticipatingSchools/participating-schools5.png" alt="" loading="lazy" /></div>
+            <div class="schools-marquee__item" aria-hidden="true"><img src="assets/ParticipatingSchools/participating-schools-6.png" alt="" loading="lazy" /></div>
+          </div>
+        </div>
+
+        <!-- Row 2: scrolls right → left (track translates right). Different starting order for variety. -->
+        <div class="schools-marquee__row schools-marquee__row--right">
+          <div class="schools-marquee__track">
+            <div class="schools-marquee__item"><img src="assets/ParticipatingSchools/participating-schools-3.jpg" alt="Partner school" loading="lazy" /></div>
+            <div class="schools-marquee__item"><img src="assets/ParticipatingSchools/participating-schools-4.jpg" alt="Partner school" loading="lazy" /></div>
+            <div class="schools-marquee__item"><img src="assets/ParticipatingSchools/participating-schools5.png" alt="Partner school" loading="lazy" /></div>
+            <div class="schools-marquee__item"><img src="assets/ParticipatingSchools/participating-schools-6.png" alt="Partner school" loading="lazy" /></div>
+            <div class="schools-marquee__item"><img src="assets/ParticipatingSchools/hopetown.png" alt="Hopetown School" loading="lazy" /></div>
+            <div class="schools-marquee__item"><img src="assets/ParticipatingSchools/participating-schools-1.jpg" alt="Partner school" loading="lazy" /></div>
+            <div class="schools-marquee__item"><img src="assets/ParticipatingSchools/participating-schools-2.png" alt="Partner school" loading="lazy" /></div>
+            <!-- duplicate set for seamless loop -->
+            <div class="schools-marquee__item" aria-hidden="true"><img src="assets/ParticipatingSchools/participating-schools-3.jpg" alt="" loading="lazy" /></div>
+            <div class="schools-marquee__item" aria-hidden="true"><img src="assets/ParticipatingSchools/participating-schools-4.jpg" alt="" loading="lazy" /></div>
+            <div class="schools-marquee__item" aria-hidden="true"><img src="assets/ParticipatingSchools/participating-schools5.png" alt="" loading="lazy" /></div>
+            <div class="schools-marquee__item" aria-hidden="true"><img src="assets/ParticipatingSchools/participating-schools-6.png" alt="" loading="lazy" /></div>
+            <div class="schools-marquee__item" aria-hidden="true"><img src="assets/ParticipatingSchools/hopetown.png" alt="" loading="lazy" /></div>
+            <div class="schools-marquee__item" aria-hidden="true"><img src="assets/ParticipatingSchools/participating-schools-1.jpg" alt="" loading="lazy" /></div>
+            <div class="schools-marquee__item" aria-hidden="true"><img src="assets/ParticipatingSchools/participating-schools-2.png" alt="" loading="lazy" /></div>
+          </div>
+        </div>
       </section>
 
       <section

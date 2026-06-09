@@ -1,0 +1,122 @@
+/* =========================================================
+   PARTICIPATING SCHOOLS — two-row logo marquee
+   Row 1 scrolls left, Row 2 scrolls right (alternating "sling")
+   ========================================================= */
+
+.schools-marquee {
+  background: #ffffff;
+  padding: 48px 16px;
+}
+
+.schools-marquee__title {
+  text-align: center;
+  font-family: "Mulish", sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  color: #081b57;
+  margin: 0 0 32px;
+}
+
+
+/* Marquee rows */
+.schools-marquee__row {
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.schools-marquee__row:last-child {
+  margin-bottom: 0;
+}
+
+.schools-marquee__track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  align-items: center;
+  will-change: transform;
+}
+
+.schools-marquee__row--left .schools-marquee__track {
+  animation: schools-scroll-left 35s linear infinite;
+}
+
+.schools-marquee__row--right .schools-marquee__track {
+  animation: schools-scroll-right 35s linear infinite;
+}
+
+/* Pause on hover / keyboard focus */
+.schools-marquee__row:hover .schools-marquee__track,
+.schools-marquee__row:focus-within .schools-marquee__track {
+  animation-play-state: paused;
+}
+
+
+/* Logo card */
+.schools-marquee__item {
+  flex: 0 0 auto;
+  width: 180px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 14px;
+  box-sizing: border-box;
+}
+
+.schools-marquee__item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+
+/* Keyframes */
+@keyframes schools-scroll-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes schools-scroll-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+
+/* Mobile / tablet — smaller logo cards */
+@media (max-width: 768px) {
+  .schools-marquee {
+    padding: 32px 12px;
+  }
+
+  .schools-marquee__title {
+    margin-bottom: 24px;
+  }
+
+  .schools-marquee__item {
+    width: 130px;
+    height: 80px;
+    padding: 10px;
+  }
+
+  .schools-marquee__track {
+    gap: 12px;
+  }
+}
+
+
+/* Reduced motion — disable animation, allow manual horizontal scroll */
+@media (prefers-reduced-motion: reduce) {
+  .schools-marquee__track {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .schools-marquee__row {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
