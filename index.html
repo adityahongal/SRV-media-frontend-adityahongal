@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="css/exhibition-banner.css" />
     <link rel="stylesheet" href="css/choose-school.css" />
     <link rel="stylesheet" href="css/appointments.css" />
+    <link rel="stylesheet" href="css/attractions.css" />
   </head>
   <body>
     <!-- Skip link: FIRST focusable element on the page -->
@@ -492,8 +493,101 @@
       </section>
 
       <section class="attractions" aria-labelledby="attractions-title">
-        <h2 id="attractions-title">Other Attractions for Parents &amp; Kids</h2>
-        <!-- Highlight cards -->
+        <div class="attractions__container">
+
+          <h2 id="attractions-title" class="attractions__title">
+            Other Attractions for Parents &amp; Kids
+          </h2>
+
+          <!-- Pinwheel: 4 diamonds -->
+          <div class="attractions__pinwheel-wrapper">
+            <div class="attractions__pinwheel" aria-hidden="true">
+              <div class="attractions__diamond attractions__diamond--top">
+                <img src="assets/other-attractions/other-attractions-pic-1.jpg" alt="" loading="lazy" />
+              </div>
+              <div class="attractions__diamond attractions__diamond--right">
+                <img src="assets/other-attractions/other-attractions-pic-2.jpg" alt="" loading="lazy" />
+              </div>
+              <div class="attractions__diamond attractions__diamond--left">
+                <img src="assets/other-attractions/other-attractions-pic-4.jpg" alt="" loading="lazy" />
+              </div>
+              <div class="attractions__diamond attractions__diamond--bottom">
+                <img src="assets/other-attractions/other-attractions-pic-3.jpg" alt="" loading="lazy" />
+              </div>
+              
+            </div>
+          </div>
+
+          <!-- Star logo in the middle of row -->
+          <div class="attractions__star-wrapper">
+            <img class="attractions__star" src="assets/other-attractions/other-attractions-star.png" alt="Premier Kidz Awards" />
+          </div>
+
+           <!-- text section -->
+          <div class="attractions__tabs" role="tablist">
+            <button
+              class="attractions__tab"
+              type="button"
+              role="tab"
+              id="tab-kidz"
+              aria-selected="true"
+              aria-controls="panel-kidz"
+            >
+              Premier Kidz Awards
+            </button>
+            <button
+              class="attractions__tab"
+              type="button"
+              role="tab"
+              id="tab-parent"
+              aria-selected="false"
+              aria-controls="panel-parent"
+            >
+              The Parent Exchange
+            </button>
+          </div>
+
+          <div class="attractions__panels">
+            <div
+              class="attractions__panel"
+              id="panel-kidz"
+              role="tabpanel"
+              aria-labelledby="tab-kidz"
+            >
+              <h3 class="attractions__panel-title">Premier Kidz Awards</h3>
+              <p class="attractions__panel-desc">
+                A prestigious platform celebrating young talent and building
+                confidence by giving children the spotlight to shine.
+              </p>
+            </div>
+
+            <div
+              class="attractions__panel"
+              id="panel-parent"
+              role="tabpanel"
+              aria-labelledby="tab-parent"
+              hidden
+            >
+              <h3 class="attractions__panel-title">The Parent Exchange</h3>
+              <p class="attractions__panel-desc">
+                A community space for parents to connect with school leaders,
+                share insights, and learn from experienced educators on the
+                latest in schooling.
+              </p>
+            </div>
+          </div>
+
+          <a href="#" class="register-btn" aria-label="Learn more about this attraction">
+            <span class="register-btn__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                   stroke-width="1.8" stroke="currentColor" class="register-btn__arrow">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+              </svg>
+            </span>
+            <span class="register-btn__text">To Know More</span>
+          </a>
+        </div>
       </section>
 
       <section
@@ -524,5 +618,6 @@
     <script src="js/header.js" defer></script>
     <script src="js/exhibition-banner.js" defer></script>
     <script src="js/choose-school.js" defer></script>
+    <script src="js/attractions.js" defer></script>
   </body>
 </html>
