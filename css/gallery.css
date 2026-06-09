@@ -1,0 +1,122 @@
+/* =========================================================
+   GALLERY — curved/lens-shaped horizontal strip
+   Container uses asymmetric border-radius (50% / 40px) to
+   produce the convex top + bottom arcs from the Figma.
+   ========================================================= */
+
+.gallery {
+  background: #ffffff;
+  padding: 56px 24px 80px;
+  overflow: hidden;
+}
+
+.gallery__title {
+  text-align: center;
+  font-family: "Mulish", sans-serif;
+  font-weight: 700;
+  font-size: clamp(24px, 2.6vw, 36px);
+  background: linear-gradient(360deg, #000E38 0%, #3F186A 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  color: transparent;
+  margin: 0 0 40px;
+}
+
+
+/* Curved strip — black fill peeks through where the arc clips */
+.gallery__strip {
+  max-width: 1480px;
+  margin: 0 auto;
+  background: transparent;
+  border-radius: 40% / 60px;
+  overflow: hidden;
+}
+
+
+/* Horizontal scrolling track */
+.gallery__track {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.gallery__track::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* Each photo — large landscape, 3:2 ratio */
+.gallery__item {
+  flex: 0 0 auto;
+  width: clamp(360px, 46vw, 720px);
+  aspect-ratio: 3 / 2;
+  scroll-snap-align: center;
+}
+
+.gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* =========================================================
+   TABLET (≤900px)
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .gallery__strip {
+    border-radius: 40% / 44px;
+  }
+
+  .gallery__item {
+    width: clamp(280px, 70vw, 480px);
+  }
+}
+
+
+/* =========================================================
+   MOBILE (≤600px)
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .gallery {
+    padding: 40px 16px 56px;
+  }
+
+  .gallery__title {
+    margin-bottom: 28px;
+  }
+
+  .gallery__strip {
+    border-radius: 40% / 32px;
+  }
+
+  .gallery__track {
+    gap: 8px;
+  }
+
+  .gallery__item {
+    width: 78vw;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery__track {
+    scroll-behavior: auto;
+  }
+}
