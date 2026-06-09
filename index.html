@@ -21,42 +21,65 @@
   <body>
     <!-- Skip link: FIRST focusable element on the page -->
     <a href="#main" class="skip-link">Skip to main content</a>
-  
+
     <!-- Sticky header — fixed at top, hidden until scroll -->
     <header class="sticky-header" data-state="hidden" aria-label="Site header">
       <div class="sticky-header__logo-container">
         <img class="sticky-header__logo" src="assets/img/logo.png" alt="" />
       </div>
-  
-      <a href="#register" class="sticky-header__register-button" aria-label="Register Now">
+
+      <a
+        href="#register"
+        class="sticky-header__register-button"
+        aria-label="Register Now"
+      >
         <span class="sticky-header__button-icon" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-               stroke-width="1.8" stroke="currentColor"
-               class="sticky-header__icon-arrow">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                  d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.8"
+            stroke="currentColor"
+            class="sticky-header__icon-arrow"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+            />
           </svg>
         </span>
         <span class="sticky-header__button-text">Register Now</span>
       </a>
     </header>
-  
+
     <main id="main">
       <section class="hero" aria-label="Welcome">
-  
         <!-- Hero header — lives inside the hero, scrolls away with it -->
         <header class="hero-header" aria-label="Hero header">
           <div class="hero-header__logo-container">
             <img class="hero-header__logo" src="assets/img/logo.png" alt="" />
           </div>
-  
-          <a href="#register" class="hero-header__register-button" aria-label="Register Now">
+
+          <a
+            href="#register"
+            class="hero-header__register-button"
+            aria-label="Register Now"
+          >
             <span class="hero-header__button-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                   stroke-width="1.8" stroke="currentColor"
-                   class="hero-header__icon-arrow">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                      d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.8"
+                stroke="currentColor"
+                class="hero-header__icon-arrow"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                />
               </svg>
             </span>
             <span class="hero-header__button-text">Register Now</span>
@@ -66,102 +89,215 @@
         <!-- Hero Section -->
 
         <div class="hero__body">
-  
-    <div class="hero__copy">
-  
-    <h1 class="hero__title">
-      <span class="hero__title-line">Discover Gurugram's</span>
-      <span class="hero__title-line hero__title-line--accent">Top 30+ Schools</span>
-      <span class="hero__title-line hero__title-line--tag">All In One Place</span>
-    </h1>
-  
-    <ul class="hero__events">
-      <li class="hero-event">
-        <div class="hero-event__where">
-          <p class="hero-event__name">Apparel House</p>
-          <p class="hero-event__address">Sec 44, Gurugram</p>
-        </div>
-        <div class="hero-event__when">
-          <p class="hero-event__date">2-3 August 2025</p>
-          <p class="hero-event__time">Sat Sun | 10AM &ndash; 6PM</p>
-        </div>
-      </li>
-      <li class="hero-event">
-        <div class="hero-event__where">
-          <p class="hero-event__name">Apparel House</p>
-          <p class="hero-event__address">Sec 44, Gurugram</p>
-        </div>
-        <div class="hero-event__when">
-          <p class="hero-event__date">2-3 August 2025</p>
-          <p class="hero-event__time">Sat Sun | 10AM &ndash; 6PM</p>
-        </div>
-      </li>
-      <li class="hero-event">
-        <div class="hero-event__where">
-          <p class="hero-event__name">Apparel House</p>
-          <p class="hero-event__address">Sec 44, Gurugram</p>
-        </div>
-        <div class="hero-event__when">
-          <p class="hero-event__date">2-3 August 2025</p>
-          <p class="hero-event__time">Sat Sun | 10AM &ndash; 6PM</p>
-        </div>
-      </li>
-      <li class="hero-event">
-        <div class="hero-event__where">
-          <p class="hero-event__name">Apparel House</p>
-          <p class="hero-event__address">Sec 44, Gurugram</p>
-        </div>
-        <div class="hero-event__when">
-          <p class="hero-event__date">2-3 August 2025</p>
-          <p class="hero-event__time">Sat Sun | 10AM &ndash; 6PM</p>
-        </div>
-      </li>
-    </ul>
-  
-  </div>
+          <div class="hero__copy">
+            <h1 class="hero__title">
+              <span class="hero__title-line">Discover Gurugram's</span>
+              <span class="hero__title-line hero__title-line--accent"
+                >Top 30+ Schools</span
+              >
+              <span class="hero__title-line hero__title-line--tag"
+                >All In One Place</span
+              >
+            </h1>
 
-  
-    <div class="hero__media">
-      <!-- 5.3: marquee (desktop) / carousel (mobile) -->
-      <p style="color:#fff">[ CENTER BLOCK — images ]</p>
-    </div>
-  
-    <form class="hero__form" aria-labelledby="enquire-title" novalidate>
-  
-    <h2 id="enquire-title" class="hero__form-title">Enquire Now</h2>
-  
-    <div class="form-field">
-      <input id="hero-parent-name" name="parent-name" type="text"
-             placeholder="Parent's Name" autocomplete="name" required />
-    </div>
-  
-    <div class="form-field">
-      <input id="hero-phone" name="phone" type="tel"
-             placeholder="Phone number" autocomplete="tel"
-             pattern="[0-9+\s\-]{7,}" required />
-    </div>
-  
-    <div class="form-field">
-      <textarea id="hero-grade" name="grade" rows="3"
+            <ul class="hero__events">
+              <li class="hero-event">
+                <div class="hero-event__where">
+                  <p class="hero-event__name">Apparel House</p>
+                  <p class="hero-event__address">Sec 44, Gurugram</p>
+                </div>
+                <div class="hero-event__when">
+                  <p class="hero-event__date">2-3 August 2025</p>
+                  <p class="hero-event__time">Sat Sun | 10AM &ndash; 6PM</p>
+                </div>
+              </li>
+              <li class="hero-event">
+                <div class="hero-event__where">
+                  <p class="hero-event__name">Apparel House</p>
+                  <p class="hero-event__address">Sec 44, Gurugram</p>
+                </div>
+                <div class="hero-event__when">
+                  <p class="hero-event__date">2-3 August 2025</p>
+                  <p class="hero-event__time">Sat Sun | 10AM &ndash; 6PM</p>
+                </div>
+              </li>
+              <li class="hero-event">
+                <div class="hero-event__where">
+                  <p class="hero-event__name">Apparel House</p>
+                  <p class="hero-event__address">Sec 44, Gurugram</p>
+                </div>
+                <div class="hero-event__when">
+                  <p class="hero-event__date">2-3 August 2025</p>
+                  <p class="hero-event__time">Sat Sun | 10AM &ndash; 6PM</p>
+                </div>
+              </li>
+              <li class="hero-event">
+                <div class="hero-event__where">
+                  <p class="hero-event__name">Apparel House</p>
+                  <p class="hero-event__address">Sec 44, Gurugram</p>
+                </div>
+                <div class="hero-event__when">
+                  <p class="hero-event__date">2-3 August 2025</p>
+                  <p class="hero-event__time">Sat Sun | 10AM &ndash; 6PM</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Hero Image Slider - middle -->
+
+          <div class="hero__media">
+            <!-- MOBILE: 3 static pebbles -->
+            <div class="hero-pebbles-mobile" aria-label="Featured students">
+              <div class="hero-pebble">
+                <img src="assets/img/hero/hero-1.jpg" alt="" />
+              </div>
+              <div class="hero-pebble">
+                <img src="assets/img/hero/hero-2.jpg" alt="" />
+              </div>
+              <div class="hero-pebble">
+                <img src="assets/img/hero/hero-3.jpg" alt="" />
+              </div>
+              <div class="hero-pebble">
+                <img src="assets/img/hero/hero-4.jpg" alt="" />
+              </div>
+              <div class="hero-pebble">
+                <img src="assets/img/hero/hero-5.jpg" alt="" />
+              </div>
+              <div class="hero-pebble">
+                <img src="assets/img/hero/hero-6.jpg" alt="" />
+              </div>
+            </div>
+
+            <div class="hero-marquee" aria-label="Featured students">
+              <!-- Column 1 — ALL 7 unique images (used as the single mobile/tablet track) -->
+              <div class="hero-marquee__col hero-marquee__col--1">
+                <div class="hero-marquee__track">
+                  <div class="hero-pebble"><img src="assets/img/hero/hero-1.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble"><img src="assets/img/hero/hero-2.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble"><img src="assets/img/hero/hero-3.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble"><img src="assets/img/hero/hero-4.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble"><img src="assets/img/hero/hero-5.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble"><img src="assets/img/hero/hero-6.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble"><img src="assets/img/hero/hero-7.jpg" alt="" loading="lazy" /></div>
+                  <!-- duplicates for seamless loop -->
+                  <div class="hero-pebble" aria-hidden="true"><img src="assets/img/hero/hero-1.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble" aria-hidden="true"><img src="assets/img/hero/hero-2.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble" aria-hidden="true"><img src="assets/img/hero/hero-3.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble" aria-hidden="true"><img src="assets/img/hero/hero-4.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble" aria-hidden="true"><img src="assets/img/hero/hero-5.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble" aria-hidden="true"><img src="assets/img/hero/hero-6.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble" aria-hidden="true"><img src="assets/img/hero/hero-7.jpg" alt="" loading="lazy" /></div>
+                </div>
+              </div>
+
+              <!-- Column 2 — 7 images offset (starts at hero-3) -->
+              <div class="hero-marquee__col hero-marquee__col--2">
+                <div class="hero-marquee__track">
+                  <div class="hero-pebble"><img src="assets/img/hero/hero-3.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble"><img src="assets/img/hero/hero-4.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble"><img src="assets/img/hero/hero-5.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble"><img src="assets/img/hero/hero-6.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble"><img src="assets/img/hero/hero-7.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble"><img src="assets/img/hero/hero-1.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble"><img src="assets/img/hero/hero-2.jpg" alt="" loading="lazy" /></div>
+                  <!-- duplicates for seamless loop -->
+                  <div class="hero-pebble" aria-hidden="true"><img src="assets/img/hero/hero-3.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble" aria-hidden="true"><img src="assets/img/hero/hero-4.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble" aria-hidden="true"><img src="assets/img/hero/hero-5.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble" aria-hidden="true"><img src="assets/img/hero/hero-6.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble" aria-hidden="true"><img src="assets/img/hero/hero-7.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble" aria-hidden="true"><img src="assets/img/hero/hero-1.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble" aria-hidden="true"><img src="assets/img/hero/hero-2.jpg" alt="" loading="lazy" /></div>
+                </div>
+              </div>
+
+              <!-- Column 3 — 7 images offset (starts at hero-5) -->
+              <div class="hero-marquee__col hero-marquee__col--3">
+                <div class="hero-marquee__track">
+                  <div class="hero-pebble"><img src="assets/img/hero/hero-5.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble"><img src="assets/img/hero/hero-6.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble"><img src="assets/img/hero/hero-7.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble"><img src="assets/img/hero/hero-1.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble"><img src="assets/img/hero/hero-2.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble"><img src="assets/img/hero/hero-3.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble"><img src="assets/img/hero/hero-4.jpg" alt="" loading="lazy" /></div>
+                  <!-- duplicates for seamless loop -->
+                  <div class="hero-pebble" aria-hidden="true"><img src="assets/img/hero/hero-5.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble" aria-hidden="true"><img src="assets/img/hero/hero-6.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble" aria-hidden="true"><img src="assets/img/hero/hero-7.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble" aria-hidden="true"><img src="assets/img/hero/hero-1.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble" aria-hidden="true"><img src="assets/img/hero/hero-2.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble" aria-hidden="true"><img src="assets/img/hero/hero-3.jpg" alt="" loading="lazy" /></div>
+                  <div class="hero-pebble" aria-hidden="true"><img src="assets/img/hero/hero-4.jpg" alt="" loading="lazy" /></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero form - right side -->
+
+          <form class="hero__form" aria-labelledby="enquire-title" novalidate>
+            <h2 id="enquire-title" class="hero__form-title">Enquire Now</h2>
+
+            <div class="form-field">
+              <input
+                id="hero-parent-name"
+                name="parent-name"
+                type="text"
+                placeholder="Parent's Name"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <div class="form-field">
+              <input
+                id="hero-phone"
+                name="phone"
+                type="tel"
+                placeholder="Phone number"
+                autocomplete="tel"
+                pattern="[0-9+\s\-]{7,}"
+                required
+              />
+            </div>
+
+            <div class="form-field">
+              <textarea
+                id="hero-grade"
+                name="grade"
+                rows="3"
                 placeholder="Which grade are you looking for?"
-                required></textarea>
-    </div>
-  
-    <a href="#submit" class="hero-section__submit-button" aria-label="Submit Now">
-        <span class="hero-section__submit-button-icon" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-               stroke-width="1.8" stroke="currentColor"
-               class="hero-section__submit-button-icon-arrow">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                  d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-          </svg>
-        </span>
-        <span class="hero-section__submit-button-text">Submit</span>
-      </a>
-  
-  </form>
-  
-  </div>
+                required
+              ></textarea>
+            </div>
+
+            <a
+              href="#submit"
+              class="hero-section__submit-button"
+              aria-label="Submit Now"
+            >
+              <span class="hero-section__submit-button-icon" aria-hidden="true">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.8"
+                  stroke="currentColor"
+                  class="hero-section__submit-button-icon-arrow"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                  />
+                </svg>
+              </span>
+              <span class="hero-section__submit-button-text">Submit</span>
+            </a>
+          </form>
+        </div>
       </section>
 
       <section class="schools-marquee" aria-label="Participating schools">
