@@ -21,7 +21,7 @@
 }
 
 .stat {
-  flex: 1 1 0;                /* equal width across all 4 stats */
+  flex: 1 1 0;                
   max-width: 320px;
   display: flex;
   align-items: center;
@@ -38,7 +38,7 @@
   pointer-events: none;
 }
 
-/* Center text — fixed width so leaves sit at the same distance in every stat */
+
 .stat__text {
   display: flex;
   flex-direction: column;
@@ -47,7 +47,7 @@
   text-align: center;
   font-family: "Mulish", sans-serif;
   color: #081b57;
-  width: 90px;               /* fixed width — equalises leaf positions across stats */
+  width: 90px;              
   flex-shrink: 0;
 }
 
@@ -63,12 +63,6 @@
   line-height: 1.3;
   margin-top: 2px;
 }
-
-
-/* =========================================================
-   NARROW DESKTOP (1024–1299px) — cap leaves to prevent overlap
-   At narrower 4-col widths, each stat slot is too tight for full-size leaves.
-   ========================================================= */
 
 @media (min-width: 1024px) and (max-width: 1299px) {
   .stat__leaf { height: 100px; }
@@ -95,15 +89,13 @@
   }
 
   .stat__text {
-    width: 80px;              /* slightly narrower on mobile */
+    width: 80px;              
   }
 
   .stat__leaf {
     height: 130px;
   }
 
-  /* Pull leaves visually closer to text — compensates for transparent
-     padding inside the leaf PNGs. */
   .stat__leaf--left  { margin-right: -35px; }
   .stat__leaf--right { margin-left:  -35px; }
 }

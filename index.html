@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="css/schools-marquee.css" />
     <link rel="stylesheet" href="css/exhibition-banner.css" />
     <link rel="stylesheet" href="css/choose-school.css" />
+    <link rel="stylesheet" href="css/appointments.css" />
   </head>
   <body>
     <!-- Skip link: FIRST focusable element on the page -->
@@ -464,8 +465,30 @@
       </section>
 
       <section class="appointments" aria-labelledby="appointments-title">
-        <h2 id="appointments-title">Pre-schedule Your School Appointments</h2>
-        <!-- CTA + illustration -->
+        <div class="appointments__content">
+          <p class="appointments__overline">Exciting Opportunities for Parents!</p>
+          <h2 id="appointments-title" class="appointments__title">
+            Pre-schedule Your </br>School Appointments
+          </h2>
+          <p class="appointments__subtitle">To Avoid Rush</p>
+
+          <a href="#register" class="appointments__cta register-btn" aria-label="Pre-schedule Now">
+            <span class="register-btn__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                   stroke-width="1.8" stroke="currentColor" class="register-btn__arrow">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+              </svg>
+            </span>
+            <span class="register-btn__text">Pre-schedule Now</span>
+          </a>
+        </div>
+
+        <div class="appointments__image">
+          <img src="assets/preschedule-parents.jpg"
+               alt="Parents consulting at a Premier Schools Exhibition booth"
+               loading="lazy" />
+        </div>
       </section>
 
       <section class="attractions" aria-labelledby="attractions-title">

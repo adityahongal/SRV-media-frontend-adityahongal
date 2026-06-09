@@ -1,0 +1,211 @@
+/* =========================================================
+   PRE-SCHEDULE APPOINTMENTS
+   ========================================================= */
+
+.appointments {
+  display: flex;
+  background: #e3d3f6; /* lavender base */
+  overflow: hidden;
+}
+
+/* Text block (left on desktop, top on mobile) */
+.appointments__content {
+  flex: 0 0 45%;
+  padding: 80px 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px;
+}
+
+.appointments__overline {
+  font-family: "Mulish", sans-serif;
+  font-style: italic;
+  padding-right: 4px;
+  font-size: 32px;
+  font-weight: 400;
+  background: linear-gradient(270deg, #755797 0%, #9B4DF0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  margin: 0;
+}
+
+.appointments__title {
+  font-family: "Mulish", sans-serif;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 1.1;
+  background: linear-gradient(360deg, #000e38 0%, #3f186a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  margin: 0;
+}
+
+.appointments__subtitle {
+  font-family: "Mulish", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  font-style: italic;
+  background: linear-gradient(270deg, #755797 0%, #9B4DF0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  padding-right: 6px;
+  margin: 0;
+}
+
+.appointments__cta {
+  margin-top: 16px;
+}
+
+/* Image block (right on desktop, bottom on mobile) */
+.appointments__image {
+  flex: 1 1 auto;
+  position: relative;
+  background: #e3d3f6; 
+}
+
+.appointments__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  /* Soft left-edge fade into the lavender on desktop */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 22%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 22%);
+}
+
+/* =========================================================
+   MOBILE / TABLET 
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .appointments {
+    flex-direction: column;
+  }
+
+  .appointments__content {
+    flex: 0 0 auto;
+    padding: 48px 24px 32px;
+  }
+
+  /* Smaller text on tablets */
+  .appointments__overline { font-size: 22px; }
+  .appointments__title    { font-size: 44px; }
+  .appointments__subtitle { font-size: 22px; }
+
+  .appointments__image {
+    flex: 0 0 auto;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+  }
+
+  .appointments__image img {
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 18%);
+    mask-image: linear-gradient(180deg, transparent 0%, #000 18%);
+  }
+}
+
+
+/* Phone — tighter sizing */
+@media (max-width: 560px) {
+  .appointments__content {
+    padding: 40px 20px 24px;
+  }
+
+  .appointments__overline { font-size: 18px; }
+  .appointments__title    { font-size: 32px; line-height: 1.15; }
+  .appointments__subtitle { font-size: 18px; }
+}
+
+
+/* =========================================================
+   PRE-SCHEDULE NOW BUTTON 
+   ========================================================= */
+
+.appointments .register-btn {
+  height: 60px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  border: 2px solid #081b57;
+  border-radius: 4px;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.appointments .register-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #5c2592;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.55s ease;
+  z-index: 0;
+}
+
+.appointments .register-btn:hover::before {
+  transform: scaleX(1);
+}
+
+.appointments .register-btn__icon {
+  width: 60px;
+  height: 100%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(270deg, #000e38 0%, #3f186a 100%);
+  position: relative;
+  z-index: 2;
+}
+
+.appointments .register-btn__arrow {
+  width: 18px;
+  height: 18px;
+  color: #ffffff;
+  transition: transform 0.45s ease;
+  transform-origin: center;
+}
+
+.appointments .register-btn:hover .register-btn__arrow {
+  transform: rotate(45deg);
+}
+
+.appointments .register-btn__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 24px;
+  font-family: "Mulish", sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #101145;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+.appointments .register-btn:hover .register-btn__text {
+  color: #ffffff;
+}
+
+/* Mobile — slightly smaller */
+@media (max-width: 768px) {
+  .appointments .register-btn        { height: 52px; }
+  .appointments .register-btn__icon  { width: 52px; }
+  .appointments .register-btn__arrow { width: 16px; height: 16px; }
+  .appointments .register-btn__text  { font-size: 13px; padding: 0 20px; }
+}
