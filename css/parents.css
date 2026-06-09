@@ -1,0 +1,221 @@
+/* =========================================================
+   WHAT MAKES PARENTS CHOOSE US — 4 video cards
+   Desktop: row of 4. Mobile: slider with prev/next.
+   ========================================================= */
+
+.parents {
+  background: #ffffff;
+  padding: 56px 24px 72px;
+}
+
+.parents__title {
+  text-align: center;
+  font-family: "Mulish", sans-serif;
+  font-weight: 700;
+  font-size: clamp(24px, 2.6vw, 36px);
+  background: linear-gradient(360deg, #000E38 0%, #3F186A 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  color: transparent;
+  margin: 0 0 40px;
+}
+
+
+/* Viewport */
+.parents__viewport {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.parents__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+
+/* Card */
+.parents__card {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.parents__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* Play button overlay — bottom-left */
+.parents__play {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: "Mulish", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+.parents__play:hover {
+  transform: scale(1.05);
+}
+
+.parents__play-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  color: #0a0427;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.parents__play-icon svg {
+  width: 14px;
+  height: 14px;
+  margin-left: 2px;
+}
+
+/* Hide overlay when video is playing */
+.parents__card[data-playing="true"] .parents__play {
+  display: none;
+}
+
+
+/* Nav controls — hidden on desktop, visible in mobile slider */
+.parents__controls {
+  display: none;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.parents__nav {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #3f186a;
+  background: transparent;
+  color: #3f186a;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.parents__nav:hover {
+  background: #3f186a;
+  color: #ffffff;
+}
+
+.parents__nav--next {
+  background: #3f186a;
+  color: #ffffff;
+}
+
+.parents__nav--next:hover {
+  background: #5c2592;
+}
+
+.parents__nav:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.parents__nav svg {
+  width: 20px;
+  height: 20px;
+}
+
+
+/* =========================================================
+   TABLET (≤1024px) — 2 cards
+   ========================================================= */
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  .parents__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* =========================================================
+   MOBILE (≤767px) — slider with prev/next
+   ========================================================= */
+
+@media (max-width: 767px) {
+  .parents {
+    padding: 40px 0 56px;
+  }
+
+  .parents__title {
+    margin-bottom: 28px;
+    padding: 0 20px;
+  }
+
+  .parents__viewport {
+    padding: 0 24px;
+  }
+
+  .parents__list {
+    display: flex;
+    grid-template-columns: none;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+
+  .parents__list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .parents__card {
+    flex: 0 0 80%;
+    scroll-snap-align: center;
+    aspect-ratio: 4 / 3;
+  }
+
+  .parents__controls {
+    display: flex;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .parents__play,
+  .parents__nav {
+    transition: none !important;
+  }
+  .parents__list {
+    scroll-behavior: auto;
+  }
+}

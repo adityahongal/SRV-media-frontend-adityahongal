@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="css/appointments.css" />
     <link rel="stylesheet" href="css/attractions.css" />
     <link rel="stylesheet" href="css/exhibition.css" />
+    <link rel="stylesheet" href="css/parents.css" />
   </head>
   <body>
     <!-- Skip link: FIRST focusable element on the page -->
@@ -665,8 +666,61 @@
       </section>
 
       <section class="parents" aria-labelledby="parents-title">
-        <h2 id="parents-title">What Makes Parents Choose Us</h2>
-        <!-- Testimonial / value cards -->
+        <h2 id="parents-title" class="parents__title">What Makes Parents Choose Us</h2>
+
+        <div class="parents__viewport">
+          <ul class="parents__list">
+            <li class="parents__card">
+              <video class="parents__video" src="assets/why-parents-choose/why-parents-choose-video-1.mp4" preload="metadata" muted playsinline></video>
+              <button class="parents__play" type="button" aria-label="Play visitor's review">
+                <span class="parents__play-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+                </span>
+                <span class="parents__play-text">Visitor&rsquo;s Review</span>
+              </button>
+            </li>
+            <li class="parents__card">
+              <video class="parents__video" src="assets/why-parents-choose/why-parents-choose-video-2.mp4" preload="metadata" muted playsinline></video>
+              <button class="parents__play" type="button" aria-label="Play visitor's review">
+                <span class="parents__play-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+                </span>
+                <span class="parents__play-text">Visitor&rsquo;s Review</span>
+              </button>
+            </li>
+            <li class="parents__card">
+              <video class="parents__video" src="assets/why-parents-choose/why-parents-choose-video-3.mp4" preload="metadata" muted playsinline></video>
+              <button class="parents__play" type="button" aria-label="Play visitor's review">
+                <span class="parents__play-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+                </span>
+                <span class="parents__play-text">Visitor&rsquo;s Review</span>
+              </button>
+            </li>
+            <li class="parents__card">
+              <video class="parents__video" src="assets/why-parents-choose/why-parents-choose-video-4.mp4" preload="metadata" muted playsinline></video>
+              <button class="parents__play" type="button" aria-label="Play visitor's review">
+                <span class="parents__play-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+                </span>
+                <span class="parents__play-text">Visitor&rsquo;s Review</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="parents__controls">
+          <button class="parents__nav parents__nav--prev" type="button" aria-label="Previous review">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button class="parents__nav parents__nav--next" type="button" aria-label="Next review">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
       </section>
 
       <section id="gallery" class="gallery" aria-labelledby="gallery-title">
@@ -685,5 +739,6 @@
     <script src="js/choose-school.js" defer></script>
     <script src="js/attractions.js" defer></script>
     <script src="js/exhibition.js" defer></script>
+    <script src="js/parents.js" defer></script>
   </body>
 </html>

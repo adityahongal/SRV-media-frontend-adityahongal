@@ -4,3 +4,12 @@ node_modules/
 .idea/
 *.log
 .env
+
+# Backups of compressed assets — keep locally, don't commit
+assets/why-parents-choose/originals/
+assets/ChooseSchoolsSection/originals/
+assets/other-attractions/originals
+  /
+assets/img/hero/originals/
+assets/exhibition-originals/
+assets/originals/
