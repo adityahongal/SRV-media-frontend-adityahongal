@@ -1,2 +1,1 @@
-// JavaScript will go here
-console.log('PSE landing page — JS loaded');
+// Entry point — section-specific behavior lives in its own JS file.

@@ -6,8 +6,10 @@
   
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // When the hero header is OUT of view → show sticky.
-        sticky.dataset.state = entry.isIntersecting ? 'hidden' : 'visible';
+        const hidden = entry.isIntersecting;
+        sticky.dataset.state = hidden ? 'hidden' : 'visible';
+        sticky.inert = hidden;
+        sticky.setAttribute('aria-hidden', hidden ? 'true' : 'false');
       },
       { threshold: 0 }
     );

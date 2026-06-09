@@ -21,6 +21,13 @@
   prevBtn.addEventListener("click", () => scrollByCard(-1));
   nextBtn.addEventListener("click", () => scrollByCard(1));
 
+  // Keyboard support — arrow keys scroll the carousel
+  list.tabIndex = 0;
+  list.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") { e.preventDefault(); scrollByCard(1); }
+    else if (e.key === "ArrowLeft") { e.preventDefault(); scrollByCard(-1); }
+  });
+
   // Disable prev/next at edges
   function updateButtons() {
     const atStart = list.scrollLeft <= 4;
