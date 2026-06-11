@@ -2,7 +2,8 @@
 
 A pixel-faithful, fully responsive landing page for the **Premier Schools Exhibition**, built as a frontend coding assignment for SRV Media.
 
-**Live:** https://frontend-task-aditya-hongal.netlify.app
+### 🔗 [Live Demo → frontend-task-aditya-hongal.netlify.app](https://frontend-task-aditya-hongal.netlify.app)
+
 **Repo:** https://github.com/adityahongal/SRV-media-frontend-adityahongal
 
 ---
